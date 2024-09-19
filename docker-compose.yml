@@ -5,5 +5,5 @@ services:
     volumes:
       - /home/jacob/web/the_online_grid:/usr/share/nginx/html
     ports:
-      - 7777:80
+      - 80:80
     restart: always
