@@ -1,7 +1,7 @@
 services:
-  test-website:
+  rps-website:
     image: nginx:latest
-    container_name: test-website
+    container_name: rps-website
     volumes:
       - /home/jacob/web/the_online_grid:/usr/share/nginx/html
     ports:
