@@ -6,4 +6,14 @@ services:
       - /home/jacob/web/the_online_grid:/usr/share/nginx/html
     ports:
       - 80:80
+    depends_on:
+      - git-clone
+        
     restart: always
+
+  git-clone:
+    image: alpine
+    volumes:
+      - ./html:/app # Mount the local folder ./html to the container's /app
+    entrypoint: /bin/sh -c "apk add --no-cache git && git clone https://github.com/username/repository.git /app && cd /app && mv repository/* ."
+
