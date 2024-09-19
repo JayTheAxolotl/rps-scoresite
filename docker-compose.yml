@@ -8,12 +8,10 @@ services:
       - 80:80
     depends_on:
       - git-clone
-        
-    restart: always
 
   git-clone:
     image: alpine
     volumes:
-      - ./html:/app # Mount the local folder ./html to the container's /app
+      - ./HTML:/app # Mount the local folder ./html to the container's /app
     entrypoint: /bin/sh -c "apk add --no-cache git && git clone https://github.com/JayTheAxolotl/rps-scoresite /app && cd /app && mv repository/* ."
 
